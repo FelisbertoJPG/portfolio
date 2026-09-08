@@ -1,0 +1,14 @@
+/* ---------- IDIOMA ---------- */
+/* cada texto existe duas vezes no HTML, marcado com lang; só o ativo aparece */
+:root[data-lang="en"] [lang="pt-BR"],
+:root[data-lang="pt-BR"] [lang="en"] { display: none; }
+
+/* ---------- TROCA DE IDIOMA ---------- */
+/* o scramble caractere a caractere é feito no JS. o parágrafo longo mudaria de
+   largura a cada frame em fonte proporcional, então recebe este fade no lugar.
+   os 300ms precisam bater com a constante FADE em js/decode.js. */
+@keyframes lang-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.lang-fade { animation: lang-fade 300ms ease-out both; }

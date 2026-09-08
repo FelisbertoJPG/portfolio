@@ -1,0 +1,32 @@
+/* ---------- TOKENS ---------- */
+/* neutros com vies frio, para separar do papel; o ambar e o unico acento e
+   aparece so onde o olho precisa de ancora: rotulo do cargo, link do projeto
+   e ferramenta selecionada no filtro. */
+:root,
+:root[data-theme="dark"] {
+  --bg: #0D1014;
+  --text: #E4EAF0;
+  --text-muted: #93A0AC;
+  --text-faint: #63707D;
+  --rule: #232C36;
+  --rule-soft: #1A222A;
+  --accent: #E8B04B;
+  --accent-soft: rgba(232, 176, 75, 0.12);
+}
+:root[data-theme="light"] {
+  --bg: #F7F7F5;
+  --text: #16191D;
+  --text-muted: #59636E;
+  --text-faint: #8A939C;
+  --rule: #E1E0DB;
+  --rule-soft: #EDECE7;
+  --accent: #8A5E0A;
+  --accent-soft: rgba(138, 94, 10, 0.10);
+}
+:root {
+  --font-body: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  /* o fundo da visualizacao ampliada e escuro nos dois temas */
+  --overlay: rgba(0, 0, 0, 0.9);
+  --on-overlay: #EAE8E4;
+}

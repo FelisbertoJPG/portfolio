@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>João Pedro Felisberto Schmidt</title>
+<meta name="description" content="Desenvolvedor full-stack em Novo Hamburgo, RS. Sustentação de sistema em produção, integração com legado e aplicativo mobile.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script>
+  /* aplica tema e idioma salvos antes da primeira pintura, evitando flash.
+     fica inline de propósito: módulo ES é deferido e só rodaria depois da
+     primeira pintura, com o tema errado na tela por um instante. */
+  try {
+    var savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light' || savedTheme === 'dark') {
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    }
+    var savedLang = localStorage.getItem('lang');
+    if (savedLang === 'en' || savedLang === 'pt-BR') {
+      document.documentElement.setAttribute('data-lang', savedLang);
+      document.documentElement.lang = savedLang;
+    }
+  } catch (e) {}
+</script>
+<!-- tokens primeiro; o resto segue a ordem das seções no body; acento por último -->
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/lang.css">
+<link rel="stylesheet" href="css/nav.css">
+<link rel="stylesheet" href="css/hero.css">
+<link rel="stylesheet" href="css/sections.css">
+<link rel="stylesheet" href="css/projects.css">
+<link rel="stylesheet" href="css/lightbox.css">
+<link rel="stylesheet" href="css/experience.css">
+<link rel="stylesheet" href="css/stack.css">
+<link rel="stylesheet" href="css/contact.css">
+<link rel="stylesheet" href="css/accent.css">
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="nav-mark">JPS</div>
+    <div class="nav-links">
+      <a href="#projects"><span lang="en">Projects</span><span lang="pt-BR">Projetos</span></a>
+      <a href="#experience"><span lang="en">Experience</span><span lang="pt-BR">Experiência</span></a>
+      <a href="#stack">Stack</a>
+      <a href="#contact"><span lang="en">Contact</span><span lang="pt-BR">Contato</span></a>
+    </div>
+    <div class="nav-switches">
+      <button class="switch lang-toggle" type="button">EN</button>
+      <button class="switch theme-toggle" type="button">
+        <svg class="icon icon-sun" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"></path>
+        </svg>
+        <svg class="icon icon-moon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>João Pedro Felisberto Schmidt</h1>
+    <p class="hero-role" lang="en"><strong>Full-stack developer</strong> in Novo Hamburgo, Brazil</p>
+    <p class="hero-role" lang="pt-BR"><strong>Desenvolvedor full-stack</strong> em Novo Hamburgo, RS</p>
+    <p class="hero-desc" lang="en">
+      I took over a healthcare portal built by another team and today I own all of it: from the
+      stored procedure in the legacy database to the Linux server that ships it. Real production,
+      real users, a billing deadline every month.
+    </p>
+    <p class="hero-desc" lang="pt-BR">
+      Responsavel tecnico por um portal de saúde:
+      De stored procedure no banco legado até o servidor Linux que publica. Sistema em produção,
+      usuário real, prazo de faturamento todo mês.
+    </p>
+  </div>
+</header>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="section-title"><span lang="en">Projects</span><span lang="pt-BR">Projetos</span></h2>
+    </div>
+
+    <div class="filter" role="group" data-label-en="Filter the projects by tool" data-label-pt="Filtrar os projetos por ferramenta"></div>
+
+    <!-- projects:start -->
+    <div class="project">
+      <div class="project-head">
+        <h3 class="project-title">Portal do IPASEM</h3>
+      </div>
+      <p class="project-desc" lang="en">The member and provider portal of a municipal healthcare institute — clinics, doctors, dentists and labs. Procedure authorization, member card, dependants, income statements and the monthly billing close. Three Yii2 applications over a shared base, with four parallel login identities (member, dependant, retiree and provider), each with its own cookie and flow. Another team wrote the codebase before me: I learned the architecture with nobody to explain it, and today I build, support and deploy it alone. Risky changes ship behind a three-mode feature flag, because the billing routine has a hard monthly deadline and cannot break.</p>
+      <p class="project-desc" lang="pt-BR">Portal do segurado e da rede prestadora de uma autarquia municipal de saúde — clínicas, consultórios, dentistas e laboratórios. Autorização de procedimento, carteirinha, dependentes, comprovante de rendimento e o fechamento mensal do faturamento. São três aplicações Yii2 sobre uma base comum, com quatro identidades de login em paralelo (titular, dependente, inativo e prestador), cada uma com seu cookie e seu fluxo. A base foi escrita por outra equipe antes de mim: aprendi a arquitetura sem ninguém para explicar e hoje desenvolvo, sustento e publico sozinho. Mudança de risco sobe atrás de feature flag de três modos, porque a rotina de faturamento tem prazo de competência e não pode quebrar.</p>
+      <p class="project-note" lang="en">Closed source — internal system.</p>
+      <p class="project-note" lang="pt-BR">Código fechado — sistema interno da autarquia.</p>
+      <div class="tags">
+        <span>PHP</span>
+        <span>Yii2</span>
+        <span>PostgreSQL</span>
+        <span>Firebird</span>
+        <span>JavaScript</span>
+        <span>Linux</span>
+      </div>
+      <div class="media-placeholder"><i>&#9654;</i><span lang="en">Recording soon</span><span lang="pt-BR">Vídeo em breve</span></div>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <h3 class="project-title">IPASEMNH Digital</h3>
+      </div>
+      <p class="project-desc" lang="en">The mobile app for members, in Flutter, and the REST API behind it — I built both sides. Medical, dental and exam authorizations straight from the phone, authorization history, member card and statements. Authentication uses an opaque header token, with the claims kept in cache rather than inside the token, and the caller context has three types: member, dependant with full access and dependant with reduced scope. Every response ships in the same envelope. The scope of the app came out of the support calls I was answering myself.</p>
+      <p class="project-desc" lang="pt-BR">O aplicativo dos segurados, em Flutter, e a API REST que o sustenta — fiz os dois lados. Emissão de ordens médicas, odontológicas e de exames direto do celular, histórico de autorizações, carteirinha e extrato. A autenticação usa token opaco por header, com as claims no cache e não dentro do token, e o contexto do chamador tem três tipos: titular, dependente com acesso total e dependente com escopo reduzido. Toda resposta sai no mesmo envelope. O escopo do app saiu dos chamados que eu mesmo atendia no suporte.</p>
+      <p class="project-note" lang="en">Closed source — internal system.</p>
+      <p class="project-note" lang="pt-BR">Código fechado — sistema interno da autarquia.</p>
+      <div class="tags">
+        <span>Flutter</span>
+        <span>Dart</span>
+        <span>API REST</span>
+        <span>PHP</span>
+        <span>JSON</span>
+      </div>
+      <div class="media-placeholder"><i>&#9654;</i><span lang="en">Recording soon</span><span lang="pt-BR">Vídeo em breve</span></div>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <h3 class="project-title">Berlim</h3>
+      </div>
+      <p class="project-desc" lang="en">A restaurant SaaS as a monorepo: a shared core holding the models, the API service and the theme, with two independent apps on top — the customer app, which opens the menu from the table and places the order, and the staff app, with login, order queue, menu admin and ranking. Supabase backend, with Postgres, auth, realtime and row level security; images on Cloudinary. Architecture decisions are written down before they become code, in a document you read before implementing.</p>
+      <p class="project-desc" lang="pt-BR">SaaS de restaurante em monorepo: um núcleo compartilhado com os modelos, o serviço de API e o tema, e dois aplicativos independentes sobre ele — o do cliente, que acessa o cardápio pela mesa e faz o pedido, e o da equipe, com login, fila de pedidos, administração do cardápio e ranking. Backend em Supabase, com Postgres, autenticação, realtime e políticas de acesso por linha; imagens no Cloudinary. As decisões de arquitetura ficam escritas antes de virar código, num documento que se lê antes de implementar.</p>
+      <p class="project-note" lang="en">Personal project, in progress.</p>
+      <p class="project-note" lang="pt-BR">Projeto próprio, em desenvolvimento.</p>
+      <div class="tags">
+        <span>Flutter</span>
+        <span>Dart</span>
+        <span>Supabase</span>
+        <span>PostgreSQL</span>
+        <span>Realtime</span>
+      </div>
+      <div class="media-placeholder"><i>&#9654;</i><span lang="en">Recording soon</span><span lang="pt-BR">Vídeo em breve</span></div>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <h3 class="project-title">Classic Duels</h3>
+        <a class="project-link" href="https://github.com/FelisbertoJPG/yugi-game-v2" target="_blank" rel="noopener">github.com/FelisbertoJPG/yugi-game-v2</a>
+      </div>
+      <p class="project-desc" lang="en">A card duel mini RPG following the official rules, running on the ygopro-core engine, with a retro browser-game front end. My favourite part is not the game: it is the .NET launcher I wrote for it. It starts the front end and the duel server, checks that each one answered with 200, opens the page and exits — it is idempotent, never starting a duplicate process, and it has a twin that shuts everything down and confirms the ports are free. Players never open a terminal.</p>
+      <p class="project-desc" lang="pt-BR">Mini RPG de duelo de cartas com as regras oficiais, rodando sobre o motor ygopro-core, com front web em estilo retrô de jogo de navegador. O que eu mais gosto nesse projeto não é o jogo: é o launcher em .NET que escrevi para ele. Ele sobe o front e o servidor de duelo, confere se cada um respondeu 200, abre a página e sai — é idempotente, não sobe processo duplicado, e tem um par que encerra tudo e confirma que as portas caíram. Quem joga nunca precisa abrir um terminal.</p>
+      <div class="tags">
+        <span>Lua</span>
+        <span>C#</span>
+        <span>JavaScript</span>
+        <span>.NET</span>
+        <span>Node</span>
+      </div>
+      <div class="media-placeholder"><i>&#9654;</i><span lang="en">Recording soon</span><span lang="pt-BR">Vídeo em breve</span></div>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <h3 class="project-title">Trilha de Estudos</h3>
+        <a class="project-link" href="https://github.com/FelisbertoJPG/study-trail" target="_blank" rel="noopener">github.com/FelisbertoJPG/study-trail</a>
+      </div>
+      <p class="project-desc" lang="en">A study app in the shape of Duolingo: each subject becomes a trail, questions are ordered from easiest to hardest and grouped into lessons of up to three, and a node only unlocks once the previous one is done. Progress and XP saved on the device, with a hardcore review mode. The content is the actual course units and past exam questions — it was built to study with, not to demo.</p>
+      <p class="project-desc" lang="pt-BR">App de estudo no formato do Duolingo: cada matéria vira uma trilha, as questões são ordenadas da mais fácil para a mais difícil e agrupadas em lições de até três, e um nó só abre quando o anterior é concluído. Progresso e XP salvos no dispositivo, com modo hardcore para revisão. O conteúdo são as unidades da disciplina e as questões das provas — foi feito para estudar de verdade, não para demonstrar.</p>
+      <div class="tags">
+        <span>Flutter</span>
+        <span>Dart</span>
+        <span>Material 3</span>
+      </div>
+      <div class="media-placeholder"><i>&#9654;</i><span lang="en">Recording soon</span><span lang="pt-BR">Vídeo em breve</span></div>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <h3 class="project-title">Channel Stream</h3>
+        <a class="project-link" href="https://github.com/FelisbertoJPG/App_YT_Repository" target="_blank" rel="noopener">github.com/FelisbertoJPG/App_YT_Repository</a>
+      </div>
+      <p class="project-desc" lang="en">A companion app for a YouTube channel: it consumes the official API, detects live streams with an animated indicator, badges anything published in the last 24 hours and filters by content type. Keys kept out of the code with dotenv, native splash and custom icon. Runs on Android and web.</p>
+      <p class="project-desc" lang="pt-BR">Aplicativo companion de um canal do YouTube: consome a API oficial, detecta transmissão ao vivo com indicador animado, marca o que saiu nas últimas 24 horas e filtra por tipo de conteúdo. Chaves fora do código com dotenv, splash nativo e ícone próprio. Roda em Android e web.</p>
+      <div class="tags">
+        <span>Flutter</span>
+        <span>Dart</span>
+        <span>API REST</span>
+        <span>Dio</span>
+      </div>
+      <div class="media-placeholder"><i>&#9654;</i><span lang="en">Recording soon</span><span lang="pt-BR">Vídeo em breve</span></div>
+    </div>
+    <!-- projects:end -->
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="section-title"><span lang="en">Experience</span><span lang="pt-BR">Experiência</span></h2>
+    </div>
+    <div class="exp-block">
+      <h3 class="exp-role" lang="en">Development and support at IPASEM Novo Hamburgo</h3>
+      <h3 class="exp-role" lang="pt-BR">Desenvolvimento e sustentação no IPASEM Novo Hamburgo</h3>
+      <p class="exp-time" lang="en">2025 - present</p>
+      <p class="exp-time" lang="pt-BR">2025 - atualmente</p>
+      <ul class="exp-list">
+        <li lang="en">I am the technical owner of the portal used every day by members and by the provider network.</li>
+        <li lang="pt-BR">Sou o responsável técnico pelo portal usado todo dia pelos segurados e pela rede prestadora.</li>
+        <li lang="en"><strong>Production support</strong> as a routine, not an on-call shift: reproduce the report, read the log, query the database, find the root cause and fix it.</li>
+        <li lang="pt-BR"><strong>Sustentação de produção</strong> como rotina, não como plantão: reproduzir o relato, ler o log, consultar o banco, achar a causa raiz e corrigir.</li>
+        <li lang="en"><strong>Integration with a legacy system</strong>: the business core runs on Firebird and is only reachable through stored procedures — more than <strong>60</strong> of them mapped by me into a single repository pattern.</li>
+        <li lang="pt-BR"><strong>Integração com sistema legado</strong>: o núcleo do negócio roda em Firebird e só é alcançável por stored procedures — mais de <strong>60</strong> mapeadas por mim num padrão único de repositório.</li>
+        <li lang="en">I turned the monthly provider close <strong>from paper into a traceable process</strong>, with defined states, an automatically archived report and an audit trail.</li>
+        <li lang="pt-BR">Transformei o fechamento mensal dos prestadores <strong>de papel em processo rastreável</strong>, com estados definidos, relatório arquivado automaticamente e trilha de auditoria.</li>
+        <li lang="en">I keep the <strong>Linux servers</strong> everything runs on: deploys over SSH, Apache, log reading, and telling apart what is the environment and what is the code.</li>
+        <li lang="pt-BR">Mantenho os <strong>servidores Linux</strong> em que tudo roda: publicação por SSH, Apache, leitura de log e o diagnóstico do que é ambiente e do que é código.</li>
+        <li lang="en">Every critical routine is documented in a <strong>runbook</strong>, with symptom, cause, fix and impact, so the next identical ticket costs minutes instead of hours.</li>
+        <li lang="pt-BR">Cada rotina crítica fica documentada em <strong>runbook</strong>, com sintoma, causa, solução e impacto, para o próximo chamado igual custar minutos em vez de horas.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="stack">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="section-title">Stack</h2>
+    </div>
+    <div class="stack-grid">
+      <div>
+        <p class="stack-group-title"><span lang="en">Languages</span><span lang="pt-BR">Linguagens</span></p>
+        <p class="stack-items">PHP, SQL, Dart, JavaScript</p>
+      </div>
+      <div>
+        <p class="stack-group-title">Web</p>
+        <p class="stack-items">Yii2, API REST, Bootstrap, mPDF</p>
+      </div>
+      <div>
+        <p class="stack-group-title">Mobile</p>
+        <p class="stack-items">Flutter, Material 3, Dio</p>
+      </div>
+      <div>
+        <p class="stack-group-title"><span lang="en">Data</span><span lang="pt-BR">Dados</span></p>
+        <p class="stack-items">PostgreSQL, Firebird, Supabase, stored procedures</p>
+      </div>
+      <div>
+        <p class="stack-group-title">Infra</p>
+        <p class="stack-items">Linux, SSH, Apache, Git</p>
+      </div>
+      <div>
+        <p class="stack-group-title"><span lang="en">Practice</span><span lang="pt-BR">Prática</span></p>
+        <p class="stack-items" lang="en">Production support, root cause analysis, technical writing, feature flags, AI-assisted development</p>
+        <p class="stack-items" lang="pt-BR">Sustentação de produção, análise de causa raiz, documentação técnica, feature flags, desenvolvimento assistido por IA</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="section-title"><span lang="en">Contact</span><span lang="pt-BR">Contato</span></h2>
+      <p class="section-sub" lang="en">If you want to talk about work or about any of these projects, just reach out.</p>
+      <p class="section-sub" lang="pt-BR">Se quiser falar sobre trabalho ou sobre algum desses projetos, é só chamar.</p>
+    </div>
+    <div class="contact-list">
+      <a href="mailto:joaopfschmidt@gmail.com"><span lang="en">Email</span><span lang="pt-BR">E-mail</span> <span class="k">joaopfschmidt@gmail.com</span></a>
+      <a href="https://www.linkedin.com/in/jo%C3%A3o-pedro-felisberto-schmidt-a004a9235/" target="_blank" rel="noopener">LinkedIn <span class="k">/in/joão-pedro-felisberto-schmidt</span></a>
+      <a href="https://github.com/FelisbertoJPG" target="_blank" rel="noopener">GitHub <span class="k">@FelisbertoJPG</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap"><span lang="en">Updated 09/2026</span><span lang="pt-BR">Atualizado em 09/2026</span></div>
+</footer>
+
+<dialog class="lightbox">
+  <button class="lightbox-close" type="button"><span lang="en">close</span><span lang="pt-BR">fechar</span></button>
+  <div class="lightbox-inner"></div>
+</dialog>
+
+<script type="module" src="js/main.js"></script>
+
+</body>
+</html>

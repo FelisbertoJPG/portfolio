@@ -1,0 +1,136 @@
+/* ---------- PROJECT FILTER ---------- */
+/* os botões são criados pelo JS a partir das tags dos cards */
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin-bottom: 40px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+}
+.filter:empty { display: none; }
+.filter button {
+  font: inherit;
+  letter-spacing: inherit;
+  color: var(--text-faint);
+  background: none;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  padding: 0 0 2px;
+  cursor: pointer;
+}
+.filter button:hover { color: var(--text-muted); }
+.filter button[aria-pressed="true"] {
+  color: var(--text);
+  border-bottom-color: var(--text-faint);
+}
+.filter-all { margin-right: 10px; }
+
+/* ---------- PROJECT CARDS ---------- */
+.project {
+  border-top: 1px solid var(--rule-soft);
+  padding: 34px 0;
+}
+.project:first-of-type { border-top: 0; padding-top: 0; }
+.project:last-child { padding-bottom: 0; }
+/* com o filtro ligado, o primeiro e o último visíveis mudam */
+.project.is-first { border-top: 0; padding-top: 0; }
+.project.is-last { padding-bottom: 0; }
+.project-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.project-title {
+  font-weight: 600;
+  font-size: 19px;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+.project-link {
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+  color: var(--text-faint);
+  text-decoration: none;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 1px;
+}
+.project-link:hover { color: var(--text); border-bottom-color: currentColor; }
+.project-desc {
+  color: var(--text-muted);
+  font-size: 16px;
+  margin: 14px 0 0;
+  max-width: 64ch;
+}
+.project-note {
+  font-size: 15px;
+  color: var(--text-faint);
+  margin: 10px 0 0;
+  max-width: 64ch;
+}
+.tags {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-faint);
+  margin-top: 16px;
+  letter-spacing: 0.02em;
+}
+/* quando as tags mudam de idioma, duplique a linha .tags inteira, nunca span a span,
+   senão o separador cai no lugar errado ao esconder um irmão */
+.tags span + span::before {
+  content: "·";
+  margin: 0 8px;
+  color: var(--rule);
+}
+
+.media-placeholder {
+  margin-top: 20px;
+  border: 1px dashed var(--rule);
+  padding: 18px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-faint);
+}
+
+.project-media {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--rule);
+  background: var(--rule-soft);
+}
+
+/* botão que envolve a mídia e abre a visualização ampliada */
+.media-zoom {
+  display: block;
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  cursor: zoom-in;
+}
+.media-zoom-hint {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.04em;
+  color: var(--text-faint);
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  padding: 2px 7px;
+}
+.media-zoom:hover .media-zoom-hint,
+.media-zoom:focus-visible .media-zoom-hint {
+  color: var(--text);
+  border-color: var(--text-faint);
+}

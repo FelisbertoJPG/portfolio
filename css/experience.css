@@ -1,0 +1,35 @@
+/* ---------- EXPERIENCE ---------- */
+.exp-role {
+  font-weight: 600;
+  font-size: 19px;
+  margin: 0 0 2px;
+}
+.exp-time {
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+  color: var(--text-faint);
+  margin: 0 0 24px;
+}
+.exp-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.exp-list li {
+  padding-left: 18px;
+  position: relative;
+  margin-bottom: 16px;
+  color: var(--text-muted);
+  font-size: 16px;
+}
+.exp-list li:last-child { margin-bottom: 0; }
+.exp-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 8px;
+  height: 1px;
+  background: var(--text-faint);
+}
+.exp-list strong { color: var(--text); font-weight: 500; }

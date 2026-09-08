@@ -1,0 +1,14 @@
+# sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# editores
+.vscode/
+.idea/
+
+# dependências (caso um dia entre build)
+node_modules/
+
+# netlify
+.netlify/

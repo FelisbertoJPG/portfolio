@@ -1,0 +1,17 @@
+# site estático sem build: o próprio repositório é a pasta publicada
+[build]
+  publish = "."
+
+# cabeçalhos básicos de segurança
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# assets versionados por nome podem ser cacheados por muito tempo;
+# css/js ainda não têm hash no nome, então ficam com cache curto e revalidação
+[[headers]]
+  for = "/media/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

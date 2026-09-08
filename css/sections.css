@@ -1,0 +1,22 @@
+/* ---------- SECTIONS ---------- */
+section { padding: 80px 0; }
+section + section { border-top: 1px solid var(--rule-soft); }
+
+.section-head { margin-bottom: 44px; }
+.section-title {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin: 0 0 12px;
+}
+/* seção sem subtítulo: o rótulo é o último elemento do cabeçalho */
+.section-head > .section-title:last-child { margin-bottom: 0; }
+.section-sub {
+  color: var(--text-muted);
+  font-size: 16px;
+  margin: 0;
+  max-width: 58ch;
+}

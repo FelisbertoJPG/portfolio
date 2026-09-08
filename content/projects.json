@@ -1,0 +1,95 @@
+{
+  "_leiame": "Fonte de autoria dos textos dos projetos. Em cada campo bilingue, 'pt' e o que voce escreve, 'en' e a traducao e 'base' e o portugues que gerou a traducao atual. Quando 'pt' e 'base' divergem, a traducao esta desatualizada. 'media' fica null enquanto o video nao existe: nesse caso o index.html mostra o placeholder.",
+  "projects": [
+    {
+      "id": "portal-ipasem",
+      "title": "Portal do IPASEM",
+      "link": null,
+      "desc": {
+        "pt": "Portal do segurado e da rede prestadora de uma autarquia municipal de saúde — clínicas, consultórios, dentistas e laboratórios. Autorização de procedimento, carteirinha, dependentes, comprovante de rendimento e o fechamento mensal do faturamento. São três aplicações Yii2 sobre uma base comum, com quatro identidades de login em paralelo (titular, dependente, inativo e prestador), cada uma com seu cookie e seu fluxo. A base foi escrita por outra equipe antes de mim: aprendi a arquitetura sem ninguém para explicar e hoje desenvolvo, sustento e publico sozinho. Mudança de risco sobe atrás de feature flag de três modos, porque a rotina de faturamento tem prazo de competência e não pode quebrar.",
+        "en": "The member and provider portal of a municipal healthcare institute — clinics, doctors, dentists and labs. Procedure authorization, member card, dependants, income statements and the monthly billing close. Three Yii2 applications over a shared base, with four parallel login identities (member, dependant, retiree and provider), each with its own cookie and flow. Another team wrote the codebase before me: I learned the architecture with nobody to explain it, and today I build, support and deploy it alone. Risky changes ship behind a three-mode feature flag, because the billing routine has a hard monthly deadline and cannot break.",
+        "base": "Portal do segurado e da rede prestadora de uma autarquia municipal de saúde — clínicas, consultórios, dentistas e laboratórios. Autorização de procedimento, carteirinha, dependentes, comprovante de rendimento e o fechamento mensal do faturamento. São três aplicações Yii2 sobre uma base comum, com quatro identidades de login em paralelo (titular, dependente, inativo e prestador), cada uma com seu cookie e seu fluxo. A base foi escrita por outra equipe antes de mim: aprendi a arquitetura sem ninguém para explicar e hoje desenvolvo, sustento e publico sozinho. Mudança de risco sobe atrás de feature flag de três modos, porque a rotina de faturamento tem prazo de competência e não pode quebrar."
+      },
+      "note": {
+        "pt": "Código fechado — sistema interno da autarquia.",
+        "en": "Closed source — internal system.",
+        "base": "Código fechado — sistema interno da autarquia."
+      },
+      "tags": ["PHP", "Yii2", "PostgreSQL", "Firebird", "JavaScript", "Linux"],
+      "media": null
+    },
+    {
+      "id": "ipasem-digital",
+      "title": "IPASEMNH Digital",
+      "link": null,
+      "desc": {
+        "pt": "O aplicativo dos segurados, em Flutter, e a API REST que o sustenta — fiz os dois lados. Emissão de ordens médicas, odontológicas e de exames direto do celular, histórico de autorizações, carteirinha e extrato. A autenticação usa token opaco por header, com as claims no cache e não dentro do token, e o contexto do chamador tem três tipos: titular, dependente com acesso total e dependente com escopo reduzido. Toda resposta sai no mesmo envelope. O escopo do app saiu dos chamados que eu mesmo atendia no suporte.",
+        "en": "The mobile app for members, in Flutter, and the REST API behind it — I built both sides. Medical, dental and exam authorizations straight from the phone, authorization history, member card and statements. Authentication uses an opaque header token, with the claims kept in cache rather than inside the token, and the caller context has three types: member, dependant with full access and dependant with reduced scope. Every response ships in the same envelope. The scope of the app came out of the support calls I was answering myself.",
+        "base": "O aplicativo dos segurados, em Flutter, e a API REST que o sustenta — fiz os dois lados. Emissão de ordens médicas, odontológicas e de exames direto do celular, histórico de autorizações, carteirinha e extrato. A autenticação usa token opaco por header, com as claims no cache e não dentro do token, e o contexto do chamador tem três tipos: titular, dependente com acesso total e dependente com escopo reduzido. Toda resposta sai no mesmo envelope. O escopo do app saiu dos chamados que eu mesmo atendia no suporte."
+      },
+      "note": {
+        "pt": "Código fechado — sistema interno da autarquia.",
+        "en": "Closed source — internal system.",
+        "base": "Código fechado — sistema interno da autarquia."
+      },
+      "tags": ["Flutter", "Dart", "API REST", "PHP", "JSON"],
+      "media": null
+    },
+    {
+      "id": "berlim",
+      "title": "Berlim",
+      "link": null,
+      "desc": {
+        "pt": "SaaS de restaurante em monorepo: um núcleo compartilhado com os modelos, o serviço de API e o tema, e dois aplicativos independentes sobre ele — o do cliente, que acessa o cardápio pela mesa e faz o pedido, e o da equipe, com login, fila de pedidos, administração do cardápio e ranking. Backend em Supabase, com Postgres, autenticação, realtime e políticas de acesso por linha; imagens no Cloudinary. As decisões de arquitetura ficam escritas antes de virar código, num documento que se lê antes de implementar.",
+        "en": "A restaurant SaaS as a monorepo: a shared core holding the models, the API service and the theme, with two independent apps on top — the customer app, which opens the menu from the table and places the order, and the staff app, with login, order queue, menu admin and ranking. Supabase backend, with Postgres, auth, realtime and row level security; images on Cloudinary. Architecture decisions are written down before they become code, in a document you read before implementing.",
+        "base": "SaaS de restaurante em monorepo: um núcleo compartilhado com os modelos, o serviço de API e o tema, e dois aplicativos independentes sobre ele — o do cliente, que acessa o cardápio pela mesa e faz o pedido, e o da equipe, com login, fila de pedidos, administração do cardápio e ranking. Backend em Supabase, com Postgres, autenticação, realtime e políticas de acesso por linha; imagens no Cloudinary. As decisões de arquitetura ficam escritas antes de virar código, num documento que se lê antes de implementar."
+      },
+      "note": {
+        "pt": "Projeto próprio, em desenvolvimento.",
+        "en": "Personal project, in progress.",
+        "base": "Projeto próprio, em desenvolvimento."
+      },
+      "tags": ["Flutter", "Dart", "Supabase", "PostgreSQL", "Realtime"],
+      "media": null
+    },
+    {
+      "id": "classic-duels",
+      "title": "Classic Duels",
+      "link": "https://github.com/FelisbertoJPG/yugi-game-v2",
+      "desc": {
+        "pt": "Mini RPG de duelo de cartas com as regras oficiais, rodando sobre o motor ygopro-core, com front web em estilo retrô de jogo de navegador. O que eu mais gosto nesse projeto não é o jogo: é o launcher em .NET que escrevi para ele. Ele sobe o front e o servidor de duelo, confere se cada um respondeu 200, abre a página e sai — é idempotente, não sobe processo duplicado, e tem um par que encerra tudo e confirma que as portas caíram. Quem joga nunca precisa abrir um terminal.",
+        "en": "A card duel mini RPG following the official rules, running on the ygopro-core engine, with a retro browser-game front end. My favourite part is not the game: it is the .NET launcher I wrote for it. It starts the front end and the duel server, checks that each one answered with 200, opens the page and exits — it is idempotent, never starting a duplicate process, and it has a twin that shuts everything down and confirms the ports are free. Players never open a terminal.",
+        "base": "Mini RPG de duelo de cartas com as regras oficiais, rodando sobre o motor ygopro-core, com front web em estilo retrô de jogo de navegador. O que eu mais gosto nesse projeto não é o jogo: é o launcher em .NET que escrevi para ele. Ele sobe o front e o servidor de duelo, confere se cada um respondeu 200, abre a página e sai — é idempotente, não sobe processo duplicado, e tem um par que encerra tudo e confirma que as portas caíram. Quem joga nunca precisa abrir um terminal."
+      },
+      "note": null,
+      "tags": ["Lua", "C#", "JavaScript", ".NET", "Node"],
+      "media": null
+    },
+    {
+      "id": "study-trail",
+      "title": "Trilha de Estudos",
+      "link": "https://github.com/FelisbertoJPG/study-trail",
+      "desc": {
+        "pt": "App de estudo no formato do Duolingo: cada matéria vira uma trilha, as questões são ordenadas da mais fácil para a mais difícil e agrupadas em lições de até três, e um nó só abre quando o anterior é concluído. Progresso e XP salvos no dispositivo, com modo hardcore para revisão. O conteúdo são as unidades da disciplina e as questões das provas — foi feito para estudar de verdade, não para demonstrar.",
+        "en": "A study app in the shape of Duolingo: each subject becomes a trail, questions are ordered from easiest to hardest and grouped into lessons of up to three, and a node only unlocks once the previous one is done. Progress and XP saved on the device, with a hardcore review mode. The content is the actual course units and past exam questions — it was built to study with, not to demo.",
+        "base": "App de estudo no formato do Duolingo: cada matéria vira uma trilha, as questões são ordenadas da mais fácil para a mais difícil e agrupadas em lições de até três, e um nó só abre quando o anterior é concluído. Progresso e XP salvos no dispositivo, com modo hardcore para revisão. O conteúdo são as unidades da disciplina e as questões das provas — foi feito para estudar de verdade, não para demonstrar."
+      },
+      "note": null,
+      "tags": ["Flutter", "Dart", "Material 3"],
+      "media": null
+    },
+    {
+      "id": "channel-stream",
+      "title": "Channel Stream",
+      "link": "https://github.com/FelisbertoJPG/App_YT_Repository",
+      "desc": {
+        "pt": "Aplicativo companion de um canal do YouTube: consome a API oficial, detecta transmissão ao vivo com indicador animado, marca o que saiu nas últimas 24 horas e filtra por tipo de conteúdo. Chaves fora do código com dotenv, splash nativo e ícone próprio. Roda em Android e web.",
+        "en": "A companion app for a YouTube channel: it consumes the official API, detects live streams with an animated indicator, badges anything published in the last 24 hours and filters by content type. Keys kept out of the code with dotenv, native splash and custom icon. Runs on Android and web.",
+        "base": "Aplicativo companion de um canal do YouTube: consome a API oficial, detecta transmissão ao vivo com indicador animado, marca o que saiu nas últimas 24 horas e filtra por tipo de conteúdo. Chaves fora do código com dotenv, splash nativo e ícone próprio. Roda em Android e web."
+      },
+      "note": null,
+      "tags": ["Flutter", "Dart", "API REST", "Dio"],
+      "media": null
+    }
+  ]
+}

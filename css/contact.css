@@ -1,0 +1,27 @@
+/* ---------- CONTACT ---------- */
+.contact-list { margin-top: 8px; }
+.contact-list a {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 18px 0;
+  border-top: 1px solid var(--rule-soft);
+  text-decoration: none;
+  font-size: 17px;
+}
+.contact-list a:last-child { border-bottom: 1px solid var(--rule-soft); }
+.contact-list a span.k {
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+  color: var(--text-faint);
+  text-align: right;
+}
+.contact-list a:hover span.k { color: var(--text-muted); }
+
+footer {
+  padding: 36px 0 64px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-faint);
+}

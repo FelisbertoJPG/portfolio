@@ -1,0 +1,19 @@
+/* ---------- STACK ---------- */
+.stack-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 26px 48px;
+}
+@media (max-width: 560px) { .stack-grid { grid-template-columns: 1fr; } }
+.stack-group-title {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-faint);
+  margin: 0 0 6px;
+  letter-spacing: 0.04em;
+}
+.stack-items {
+  font-size: 16px;
+  color: var(--text-muted);
+  margin: 0;
+}
