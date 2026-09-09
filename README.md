@@ -23,6 +23,8 @@ css/tokens.css        paleta: neutros frios + âmbar como único acento
 css/accent.css        camada de identidade (só ela muda em relação ao original)
 css/*.css             um arquivo por seção
 js/main.js            ponto de entrada; cada módulo expõe um init
+js/reel.js            carrossel de prévias; os cards saem dos próprios projetos
+js/reveal.js          fade do conteúdo conforme ele entra na tela
 media/                vídeos dos projetos (vazio por enquanto)
 ```
 
@@ -55,6 +57,10 @@ do projeto em `content/projects.json`:
 ```json
 "media": { "type": "video", "name": "berlim", "width": 1440, "height": 820 }
 ```
+
+O carrossel de prévias, no topo da página, não precisa de nada: ele clona a
+mídia do card do projeto, então o vídeo aparece lá assim que aparecer aqui.
+Enquanto não existe, o card do carrossel mostra o mesmo aviso de "em breve".
 
 O lightbox e o `prefers-reduced-motion` passam a funcionar sozinhos: `js/lightbox.js`
 clona a mídia para o `<dialog>` e `js/motion.js` tira o autoplay de quem pediu menos

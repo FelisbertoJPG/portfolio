@@ -1,0 +1,23 @@
+/* ---------- REVEAL ---------- */
+/* o conteúdo entra em fade quando chega na tela. quem liga é js/reveal.js,
+   marcando data-reveal="on" no <html> e data-reveal em cada alvo: sem JS
+   nada aqui vale e a página aparece inteira, como antes.
+
+   o movimento e o tempo são os mesmos do fade do deck no portfólio original
+   — 14px de subida em pouco mais de meio segundo —, para o site parecer da
+   mesma família.
+
+   a transição fica declarada só no estado final: assim ela vale na entrada e
+   não tenta animar a primeira pintura. quem pediu menos movimento tem toda
+   transição desligada em css/base.css, e aí o conteúdo simplesmente aparece. */
+
+:root[data-reveal="on"] [data-reveal] {
+  opacity: 0;
+  transform: translateY(14px);
+}
+:root[data-reveal="on"] [data-reveal].is-in {
+  opacity: 1;
+  transform: none;
+  transition: opacity 520ms ease, transform 520ms ease;
+  transition-delay: var(--reveal-delay, 0ms);
+}

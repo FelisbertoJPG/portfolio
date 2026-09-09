@@ -32,11 +32,13 @@
 <link rel="stylesheet" href="css/nav.css">
 <link rel="stylesheet" href="css/hero.css">
 <link rel="stylesheet" href="css/sections.css">
+<link rel="stylesheet" href="css/reel.css">
 <link rel="stylesheet" href="css/projects.css">
 <link rel="stylesheet" href="css/lightbox.css">
 <link rel="stylesheet" href="css/experience.css">
 <link rel="stylesheet" href="css/stack.css">
 <link rel="stylesheet" href="css/contact.css">
+<link rel="stylesheet" href="css/reveal.css">
 <link rel="stylesheet" href="css/accent.css">
 </head>
 <body>
@@ -81,6 +83,31 @@
     </p>
   </div>
 </header>
+
+<section id="reel" class="reel">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="section-title"><span lang="en">Reel</span><span lang="pt-BR">Prévias</span></h2>
+      <p class="section-sub" lang="en">Screen recordings of the projects below. The cards fill in as the videos get recorded.</p>
+      <p class="section-sub" lang="pt-BR">Gravações de tela dos projetos abaixo. Os cards se preenchem conforme os vídeos forem gravados.</p>
+    </div>
+  </div>
+  <!-- os cards são clonados dos projetos por js/reel.js -->
+  <div class="reel-stage">
+    <ul class="reel-track"></ul>
+    <button class="reel-arrow reel-prev" type="button" data-label-en="Previous preview" data-label-pt="Prévia anterior">
+      <svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M15 5l-7 7 7 7"></path>
+      </svg>
+    </button>
+    <button class="reel-arrow reel-next" type="button" data-label-en="Next preview" data-label-pt="Próxima prévia">
+      <svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M9 5l7 7-7 7"></path>
+      </svg>
+    </button>
+  </div>
+  <div class="reel-meter"><div class="reel-progress"></div></div>
+</section>
 
 <section id="projects">
   <div class="wrap">
