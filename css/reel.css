@@ -16,8 +16,11 @@
 .reel + section { border-top: 0; }
 :root[data-reel="on"] .reel + section { border-top: 1px solid var(--rule-soft); }
 
+/* o topo é curto de propósito: o carrossel vem logo depois da apresentação,
+   e o vão inteiro de seção separaria demais os dois */
 .reel {
   --reel-w: min(560px, 74vw);
+  padding-top: 32px;
   padding-bottom: 64px;
 }
 .reel .section-head { margin-bottom: 32px; }
@@ -160,6 +163,6 @@
 }
 
 @media (max-width: 560px) {
-  .reel { --reel-w: 82vw; padding-bottom: 48px; }
+  .reel { --reel-w: 82vw; padding-top: 24px; padding-bottom: 48px; }
   .reel-arrow { width: 30px; height: 30px; }
 }
