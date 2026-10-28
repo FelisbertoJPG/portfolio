@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>João Pedro Felisberto Schmidt</title>
-<meta name="description" content="Desenvolvedor full-stack em Novo Hamburgo, RS. Sustentação de sistema em produção, integração com legado e aplicativo mobile.">
+<meta name="description" content="Desenvolvedor full-stack em Novo Hamburgo, RS. Sustentação de sistema de saúde em produção, integração com legado, aplicativo mobile e digitalização de processos.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -75,11 +75,14 @@
     <p class="hero-desc" lang="en">
       I work across a municipal healthcare portal, from the stored procedure in the legacy
       database to the Linux server that ships it. Real production, real users, a billing
-      deadline every month.
+      deadline every month. What I enjoy most is taking processes off paper: the members' app,
+      the providers' monthly close, documents checked by OCR.
     </p>
     <p class="hero-desc" lang="pt-BR">
       Trabalho em um portal de saúde de ponta a ponta: da stored procedure no banco legado até o
       servidor Linux que publica. Sistema em produção, usuário real, prazo de faturamento todo mês.
+      O que mais gosto é tirar processo do papel: o app dos segurados, o fechamento mensal dos
+      prestadores, a conferência de documentos por OCR.
     </p>
   </div>
 </header>
@@ -120,8 +123,8 @@
       <div class="project-head">
         <h3 class="project-title">Portal do IPASEM</h3>
       </div>
-      <p class="project-desc" lang="en">The member and provider portal of a municipal healthcare institute — clinics, doctors, dentists and labs. Procedure authorization, member card, dependants, income statements and the monthly billing close. Three Yii2 applications over a shared base, with four parallel login identities (member, dependant, retiree and provider), each with its own cookie and flow. The codebase predates me: I learned the architecture from the code itself, and today I handle development, support and deploys. Risky changes ship behind a three-mode feature flag, because the billing routine has a hard monthly deadline and cannot break.</p>
-      <p class="project-desc" lang="pt-BR">Portal do segurado e da rede prestadora de uma autarquia municipal de saúde — clínicas, consultórios, dentistas e laboratórios. Autorização de procedimento, carteirinha, dependentes, comprovante de rendimento e o fechamento mensal do faturamento. São três aplicações Yii2 sobre uma base comum, com quatro identidades de login em paralelo (titular, dependente, inativo e prestador), cada uma com seu cookie e seu fluxo. A base é anterior a mim: aprendi a arquitetura pelo próprio código e hoje cuido do desenvolvimento, da sustentação e da publicação. Mudança de risco sobe atrás de feature flag de três modos, porque a rotina de faturamento tem prazo de competência e não pode quebrar.</p>
+      <p class="project-desc" lang="en">The member and provider portal of a municipal healthcare institute — clinics, doctors, dentists and labs. Procedure authorization, member card, dependants, income statements and the monthly billing close. Three Yii2 applications over a shared base, with four parallel login identities (member, dependant, retiree and provider), each with its own cookie and flow. The codebase predates me: I learned the architecture from the code itself, and today I handle development, support and deploys. Risky changes ship behind a three-mode feature flag, because the billing routine has a hard monthly deadline and cannot break. That is how the OCR check went in: when a provider uploads the signed authorization, the system looks for the authorization number in the document, and the rule spent a while only warning, to measure the error rate, before it started refusing uploads.</p>
+      <p class="project-desc" lang="pt-BR">Portal do segurado e da rede prestadora de uma autarquia municipal de saúde — clínicas, consultórios, dentistas e laboratórios. Autorização de procedimento, carteirinha, dependentes, comprovante de rendimento e o fechamento mensal do faturamento. São três aplicações Yii2 sobre uma base comum, com quatro identidades de login em paralelo (titular, dependente, inativo e prestador), cada uma com seu cookie e seu fluxo. A base é anterior a mim: aprendi a arquitetura pelo próprio código e hoje cuido do desenvolvimento, da sustentação e da publicação. Mudança de risco sobe atrás de feature flag de três modos, porque a rotina de faturamento tem prazo de competência e não pode quebrar. Foi assim com a conferência por OCR: quando o prestador envia a autorização assinada, o sistema procura o número dela no documento, e a regra passou um período só avisando, para medir a taxa de erro, antes de começar a recusar envio.</p>
       <p class="project-note" lang="en">Closed source — internal system.</p>
       <p class="project-note" lang="pt-BR">Código fechado — sistema interno da autarquia.</p>
       <div class="tags">
@@ -131,6 +134,7 @@
         <span>Firebird</span>
         <span>JavaScript</span>
         <span>Linux</span>
+        <span>Tesseract</span>
       </div>
       <div class="media-placeholder"><i>&#9654;</i><span lang="en">Recording soon</span><span lang="pt-BR">Vídeo em breve</span></div>
     </div>
@@ -139,8 +143,8 @@
       <div class="project-head">
         <h3 class="project-title">IPASEMNH Digital</h3>
       </div>
-      <p class="project-desc" lang="en">The mobile app for members, in Flutter, and the REST API behind it — I worked on both sides. Medical, dental and exam authorizations straight from the phone, with the attachment photographed on the spot and the authorization PDF ready to save or hand to the provider; the app checks status in the background and notifies when one is approved or denied, so nobody has to keep opening the screen to find out. It also carries the member card, the authorization history, the co-payment statement with the income tax report, and the provider network filtered by speciality and city. There is no separate signup: you sign in with the same password as the portal and, after the first login, with the device’s own biometrics. Authentication uses an opaque header token, with the claims kept in cache rather than inside the token, and the caller context has three types: member, dependant with full access and dependant with reduced scope. Every response ships in the same envelope. The idea came up in 2015, "an app to issue authorizations and retire the paper form". In 2025 I got to build the project and bring it to life.</p>
-      <p class="project-desc" lang="pt-BR">O aplicativo dos segurados, em Flutter, e a API REST que o sustenta — trabalhei nos dois lados. Emissão de ordens médicas, odontológicas e de exames direto do celular, com o anexo fotografado na hora e o PDF da autorização pronto para guardar ou levar ao prestador; o app verifica o status em segundo plano e avisa quando ela é liberada ou negada, sem ninguém precisar ficar abrindo a tela para descobrir. Traz também a carteirinha, o histórico de autorizações, o extrato de coparticipação com informe para o Imposto de Renda e a rede credenciada com filtro por especialidade e cidade. Não há cadastro separado: entra-se com a mesma senha do portal e, depois do primeiro acesso, pela biometria do próprio aparelho. A autenticação usa token opaco por header, com as claims no cache e não dentro do token, e o contexto do chamador tem três tipos: titular, dependente com acesso total e dependente com escopo reduzido. Toda resposta sai no mesmo envelope. A ideia surgiu em 2015, "um app para emitir ordens e aposentar o papel". Em 2025 pude confeccionar esse projeto, e dar vida a ele.</p>
+      <p class="project-desc" lang="en">The mobile app for members, in Flutter, and the REST API behind it — I worked on both sides. Medical, dental and exam authorizations straight from the phone, with the attachment photographed on the spot and the authorization PDF ready to save or hand to the provider; the app checks status in the background and notifies when one is approved or denied, so nobody has to keep opening the screen to find out. It also carries the member card, the authorization history, the co-payment statement with the income tax report, and the provider network filtered by speciality and city. There is no separate signup: you sign in with the same password as the portal and, after the first login, with the device’s own biometrics. Authentication uses an opaque header token, with the claims kept in cache rather than inside the token, and the caller context has three types: member, dependant with full access and dependant with reduced scope. Every response ships in the same envelope. After launch, the app kept growing from real use: the full authorization history with management, the reason behind a denial shown to the member, the provider's phone number at the moment of issuing, the member's photo to update the registration, and members still in their waiting period can now sign in, with what they cannot use yet locked, instead of being turned away at login. The idea came up in 2015, "an app to issue authorizations and retire the paper form". In 2025 I got to build the project and bring it to life.</p>
+      <p class="project-desc" lang="pt-BR">O aplicativo dos segurados, em Flutter, e a API REST que o sustenta — trabalhei nos dois lados. Emissão de ordens médicas, odontológicas e de exames direto do celular, com o anexo fotografado na hora e o PDF da autorização pronto para guardar ou levar ao prestador; o app verifica o status em segundo plano e avisa quando ela é liberada ou negada, sem ninguém precisar ficar abrindo a tela para descobrir. Traz também a carteirinha, o histórico de autorizações, o extrato de coparticipação com informe para o Imposto de Renda e a rede credenciada com filtro por especialidade e cidade. Não há cadastro separado: entra-se com a mesma senha do portal e, depois do primeiro acesso, pela biometria do próprio aparelho. A autenticação usa token opaco por header, com as claims no cache e não dentro do token, e o contexto do chamador tem três tipos: titular, dependente com acesso total e dependente com escopo reduzido. Toda resposta sai no mesmo envelope. Depois de publicado, o app seguiu crescendo pelo uso: histórico completo e gestão das autorizações, o motivo da negativa visível para o segurado, o telefone do prestador na hora de emitir, a foto do segurado para atualizar o cadastro, e quem ainda está em carência passou a entrar, com o que não pode usar travado, em vez de ser barrado no login. A ideia surgiu em 2015, "um app para emitir ordens e aposentar o papel". Em 2025 pude confeccionar esse projeto, e dar vida a ele.</p>
       <p class="project-note" lang="en">Closed source — internal system. Published on the Android and iOS stores.</p>
       <p class="project-note" lang="pt-BR">Código fechado — sistema interno da autarquia. Publicado nas lojas Android e iOS.</p>
       <div class="tags">
@@ -149,6 +153,48 @@
         <span>API REST</span>
         <span>PHP</span>
         <span>JSON</span>
+      </div>
+      <div class="media-placeholder"><i>&#9654;</i><span lang="en">Recording soon</span><span lang="pt-BR">Vídeo em breve</span></div>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <h3 class="project-title">Lubelion Online</h3>
+        <span class="project-links">
+          <a class="project-link" href="https://felisbertojpg.github.io/MMO-Project/" target="_blank" rel="noopener"><span lang="en">play in the browser</span><span lang="pt-BR">jogar no navegador</span></a>
+          <a class="project-link" href="https://github.com/FelisbertoJPG/MMO-Project" target="_blank" rel="noopener">github.com/FelisbertoJPG/MMO-Project</a>
+        </span>
+      </div>
+      <p class="project-desc" lang="en">A souls-like action RPG that runs in the browser, in plain three.js, with no build step and no dependencies. You wake up in a cell with no weapon and cross the dungeon to the boss. There are two modes: the Journey, where the world is yours alone and a friend can join to fight alongside you or duel, and the Online World, one shared map with an account, the character stored on the server, and enemies and bosses that belong to everyone. Everything that arrives over the network is validated, and malformed data is dropped. The project also holds the scene editor, the character editor and the tools that turn an AI-generated 3D model, with no skeleton and no colour, into a body that wears the armour and plays every animation in the game. The AI-assisted development is organised too: the documentation lives in a knowledge base split by area, each area with its own Claude Code agents, a light one and a thorough one, and a written rule that the effort spent must match the size of the request.</p>
+      <p class="project-desc" lang="pt-BR">RPG de ação souls-like que roda no navegador, em three.js puro, sem build e sem dependências. Você acorda numa cela sem arma e atravessa a masmorra até o chefe. São dois modos: a Jornada, em que o mundo é só seu e um amigo entra para lutar junto ou duelar, e o Mundo online, um mapa compartilhado, com conta, personagem guardado no servidor e inimigos e chefes que são de todos. Tudo que chega pela rede passa por validação, e dado torto é descartado. Dentro do projeto estão o editor de cenas, o editor de personagem e as ferramentas que transformam um modelo 3D gerado por IA, sem esqueleto e sem cor, num corpo que veste as armaduras e usa todas as animações do jogo. O desenvolvimento com IA também é organizado: a documentação fica numa base de conhecimento dividida por área, cada área com seus agentes do Claude Code, um leve e um forte, e uma regra escrita de que o gasto tem de ser proporcional ao pedido.</p>
+      <p class="project-note" lang="en">Personal project, in progress. Playable in the browser, nothing to install.</p>
+      <p class="project-note" lang="pt-BR">Projeto próprio, em desenvolvimento. Jogável no navegador, sem instalar nada.</p>
+      <div class="tags">
+        <span>JavaScript</span>
+        <span>three.js</span>
+        <span>WebGL</span>
+        <span>Node</span>
+        <span>Supabase</span>
+        <span>Blender</span>
+        <span>Claude Code</span>
+      </div>
+      <div class="media-placeholder"><i>&#9654;</i><span lang="en">Recording soon</span><span lang="pt-BR">Vídeo em breve</span></div>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <h3 class="project-title">POS Bridge</h3>
+        <a class="project-link" href="https://github.com/FelisbertoJPG/POS-Bridge" target="_blank" rel="noopener">github.com/FelisbertoJPG/POS-Bridge</a>
+      </div>
+      <p class="project-desc" lang="en">A Flutter checkout that charges through a card machine. The focus is not the payment screen, it is the moment the answer never arrives: Bluetooth drops, the acquirer's app freezes or the phone closes the app, and the cashier does not know whether the customer paid. Treating it as declined means charging twice; treating it as approved means handing over goods without being paid. So the transaction is saved as pending before the app talks to the terminal, silence past the timeout becomes "unconfirmed", new charges are blocked while anything is pending, and the app reconciles with the terminal by reference. The card machine sits behind one interface: switching acquirers means writing one adapter and changing one line. A simulator with four scenarios, the lost response among them, and ten tests cover the behaviour with no hardware.</p>
+      <p class="project-desc" lang="pt-BR">App de caixa em Flutter que cobra por uma maquininha de cartão. O foco não é a tela de pagamento, é o momento em que a resposta não chega: o Bluetooth cai, o app da adquirente trava ou o celular fecha o app, e o caixa não sabe se o cliente pagou. Tratar como recusa faz cobrar duas vezes; tratar como aprovação entrega sem receber. Então a transação é gravada como pendente antes de o app falar com o terminal, silêncio depois do timeout vira "sem confirmação", nova cobrança fica bloqueada enquanto houver pendência e o app concilia com o terminal pela referência. A maquininha fica atrás de uma interface: trocar de adquirente é escrever um adaptador e mudar uma linha. Um simulador com quatro cenários, entre eles a resposta perdida, e dez testes cobrem o comportamento sem hardware.</p>
+      <p class="project-note" lang="en">Personal project. No real acquirer integration: the simulator is there to demo and test the behaviour.</p>
+      <p class="project-note" lang="pt-BR">Projeto próprio. Sem integração real com adquirente: o simulador existe para demonstrar e testar o comportamento.</p>
+      <div class="tags">
+        <span>Flutter</span>
+        <span>Dart</span>
+        <span>Material 3</span>
+        <span>Testes</span>
       </div>
       <div class="media-placeholder"><i>&#9654;</i><span lang="en">Recording soon</span><span lang="pt-BR">Vídeo em breve</span></div>
     </div>
@@ -194,8 +240,8 @@
       </div>
       <p class="project-desc" lang="en">A 3D scene builder in three.js: you lay out a place by moving pieces — trees, rocks, floor tiles —, sculpt the terrain with a brush, tune each item’s collision box and save one file per scene. Then you step inside and walk it, to find out whether the place is actually passable: a scene that looks great from above can be a maze at eye level. The decision holding the project together is that the editor and the viewer share every implementation — the scene format, the mesh assembly, the collision and the walking body are literally the same functions in both. A second collision would give an editor that approves a place the viewer refuses, and the error would only show up once the scene was in use. Zero dependencies, no framework and no build step: three.js is vendored and the piece art is generated in code, so there is no binary in the repository that nobody knows how to rebuild.</p>
       <p class="project-desc" lang="pt-BR">Construtor de cenas 3D em three.js: monta-se um lugar movendo peças — árvore, pedra, placa de chão —, esculpe-se o relevo com um pincel, ajusta-se a caixa de colisão de cada item e salva-se num arquivo por cena. Depois entra-se nele e anda-se, para descobrir se o lugar é transitável: uma cena que parece ótima de cima pode ser um labirinto ao nível dos olhos. A decisão que sustenta o projeto é que o editor e o visor não têm duas implementações de nada — o formato da cena, a montagem da malha, a colisão e o corpo que anda são literalmente as mesmas funções nos dois. Uma segunda colisão daria um editor que aprova um lugar que o visor recusa, e o erro só apareceria com a cena já em uso. Zero dependências, sem framework e sem build step: o three é vendorizado e a arte das peças é gerada em código, então não há binário no repositório que alguém não saiba refazer.</p>
-      <p class="project-note" lang="en">Personal project, in progress. It started as an internal tool inside Classic Duels and became its own project.</p>
-      <p class="project-note" lang="pt-BR">Projeto próprio, em desenvolvimento. Nasceu como ferramenta interna do Classic Duels e virou projeto à parte.</p>
+      <p class="project-note" lang="en">Personal project, in progress. It started as an internal tool inside Classic Duels, became its own project, and today it is the scene editor of Lubelion Online.</p>
+      <p class="project-note" lang="pt-BR">Projeto próprio, em desenvolvimento. Nasceu como ferramenta interna do Classic Duels, virou projeto à parte e hoje é o editor de cenas do Lubelion Online.</p>
       <div class="tags">
         <span>JavaScript</span>
         <span>three.js</span>
@@ -264,12 +310,16 @@
         <li lang="pt-BR">Tirei do papel o <strong>IPASEMNH Digital</strong>, o aplicativo dos segurados — cliente Flutter e API REST, <strong>mais de 500 commits</strong> em um ano, <strong>publicado nas lojas Android e iOS</strong> desde agosto de 2026.</li>
         <li lang="en">In production it became a real channel: <strong>350 authorizations issued</strong> in the first week of measurement and <strong>104 dependants</strong> registered, 99 of them with the registration completed — service that used to require a counter or a phone call.</li>
         <li lang="pt-BR">No ar, virou canal de verdade: <strong>350 ordens emitidas</strong> na primeira semana de medição e <strong>104 dependentes</strong> cadastrados, 99 deles com o cadastro concluído — atendimento que antes exigia balcão ou telefone.</li>
-        <li lang="en">The core delivery was the <strong>digital member card</strong>: it works offline and exports as PDF, replacing the physical plan card.</li>
-        <li lang="pt-BR">A entrega central foi a <strong>carteirinha digital</strong>: funciona offline e exporta em PDF, substituindo o cartão físico do plano.</li>
+        <li lang="en">The core delivery was the <strong>digital member card</strong>: it works offline and exports as PDF, replacing the physical plan card, with control by a token issued within a time window, and a quick lookup the provider can run outside the login without breaching the LGPD, Brazil's data protection law.</li>
+        <li lang="pt-BR">A entrega central foi a <strong>carteirinha digital</strong>: funciona offline e exporta em PDF, substituindo o cartão físico do plano, com controle por token emitido dentro de uma janela de tempo e a possibilidade de o prestador realizar uma consulta rápida fora do login, sem infringir a LGPD.</li>
         <li lang="en">Access is split into <strong>three profiles</strong> — member, dependant with full access and dependant with reduced scope — and a dependant only operates once the member grants it. Health data demands care on the sensitive surface: SSL pinning in release builds, ephemeral token sessions, device biometrics for login and an interceptor that strips tokens and personal data out of every log.</li>
         <li lang="pt-BR">O acesso se divide em <strong>três perfis</strong> — titular, dependente com acesso total e dependente com escopo reduzido — e o dependente só opera depois que o titular libera. Dado de saúde exige cuidado com a superfície sensível: SSL pinning nos builds de release, sessão por token efêmero, login por biometria do aparelho e um interceptor que remove token e dado pessoal de qualquer log.</li>
         <li lang="en"><strong>Linux servers</strong>: I am not their administrator, but that is where the system runs — I deploy over SSH, read the Apache logs, tell apart what is the environment and what is the code, and install a missing library when one is needed, careful never to leave the machine in a state that needs a restore.</li>
         <li lang="pt-BR"><strong>Servidores Linux</strong>: não sou o administrador deles, mas é onde o sistema roda — publico por SSH, leio log do Apache, diagnostico o que é ambiente e o que é código e instalo a biblioteca que faltar, com o cuidado de não deixar a máquina em estado que exija restauração.</li>
+        <li lang="en">Provider uploads are now <strong>checked by OCR</strong>: the system looks for the authorization number in the signed document before accepting the attachment. When it left the server at a <strong>load above 400</strong> on 4 cores for a night, measuring showed that Tesseract read the image in 0.09 s — the problem was the design of the call: heavy CPU work, with no concurrency cap, inside the HTTP request, and orphaned processes feeding the load back. The analysis became a written <strong>remediation plan</strong>.</li>
+        <li lang="pt-BR">O envio dos prestadores passou a ser <strong>conferido por OCR</strong>: o sistema procura o número da autorização no documento assinado antes de aceitar o anexo. Quando isso deixou o servidor com <strong>load acima de 400</strong> em 4 núcleos por uma noite, a medição mostrou que o Tesseract lia a imagem em 0,09 s — o problema era o desenho da chamada: trabalho pesado de CPU, sem teto de concorrência, dentro da requisição HTTP, com processos órfãos realimentando a carga. A análise virou um <strong>plano de correção</strong> escrito.</li>
+        <li lang="en">Members in their <strong>waiting period</strong> now sign in to the portal and the app with what they cannot use yet locked, instead of being turned away at login. The rule lives in one place and applies to both channels.</li>
+        <li lang="pt-BR">O <strong>segurado em carência</strong> passou a entrar no portal e no app com o que ainda não pode usar travado, em vez de ser barrado no login. A regra mora num lugar só e vale nos dois canais.</li>
         <li lang="en">Every critical routine is documented in a <strong>runbook</strong>, with symptom, cause, fix and impact, so the next identical ticket costs minutes instead of hours.</li>
         <li lang="pt-BR">Cada rotina crítica fica documentada em <strong>runbook</strong>, com sintoma, causa, solução e impacto, para o próximo chamado igual custar minutos em vez de horas.</li>
       </ul>
@@ -289,7 +339,7 @@
       </div>
       <div>
         <p class="stack-group-title">Web</p>
-        <p class="stack-items">Yii2, API REST, Bootstrap, mPDF</p>
+        <p class="stack-items">Yii2, API REST, Bootstrap, mPDF, three.js, OCR (Tesseract)</p>
       </div>
       <div>
         <p class="stack-group-title">Mobile</p>
@@ -301,12 +351,12 @@
       </div>
       <div>
         <p class="stack-group-title">Infra</p>
-        <p class="stack-items">Linux, SSH, Apache, Git</p>
+        <p class="stack-items">Linux, SSH, Apache, Git, Render, GitHub Pages</p>
       </div>
       <div>
         <p class="stack-group-title"><span lang="en">Practice</span><span lang="pt-BR">Prática</span></p>
-        <p class="stack-items" lang="en">Production support, root cause analysis, technical writing, feature flags, AI-assisted development</p>
-        <p class="stack-items" lang="pt-BR">Sustentação de produção, análise de causa raiz, documentação técnica, feature flags, desenvolvimento assistido por IA</p>
+        <p class="stack-items" lang="en">Production support, root cause analysis, technical writing, feature flags, measured rollout (warn before block), AI-assisted development with agents and a knowledge base per area</p>
+        <p class="stack-items" lang="pt-BR">Sustentação de produção, análise de causa raiz, documentação técnica, feature flags, implantação medida (avisar antes de bloquear), desenvolvimento assistido por IA com agentes e base de conhecimento por área</p>
       </div>
     </div>
   </div>
@@ -328,7 +378,7 @@
 </section>
 
 <footer>
-  <div class="wrap"><span lang="en">Updated 09/2026</span><span lang="pt-BR">Atualizado em 09/2026</span></div>
+  <div class="wrap"><span lang="en">Updated 10/2026</span><span lang="pt-BR">Atualizado em 10/2026</span></div>
 </footer>
 
 <dialog class="lightbox">

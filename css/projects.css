@@ -60,6 +60,12 @@
   padding-bottom: 1px;
 }
 .project-link:hover { color: var(--text); border-bottom-color: currentColor; }
+/* projeto com mais de um link (jogar + repositório): ficam juntos no canto do título */
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+}
 .project-desc {
   color: var(--text-muted);
   font-size: 16px;

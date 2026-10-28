@@ -69,6 +69,6 @@ movimento.
 ## Pendências
 
 - [ ] Formação no bloco de experiência (curso, instituição, período).
-- [ ] Gravar os seis vídeos.
+- [ ] Gravar os vídeos dos projetos (são nove; o Lubelion Online e o POS Bridge têm demonstração pronta: o jogo no Pages e o simulador da maquininha).
 - [ ] Decidir se `berlim_saas` vira repositório público, para o projeto ganhar link.
 - [ ] WhatsApp na lista de contatos, se quiser esse canal.
