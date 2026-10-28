@@ -44,6 +44,8 @@ function build(project) {
     copy.removeAttribute('width');
     copy.removeAttribute('height');
     copy.removeAttribute('autoplay');
+    /* a barra de tempo é do card do projeto; no carrossel o quadro inteiro é um botão */
+    copy.removeAttribute('controls');
     if (copy.tagName === 'VIDEO') {
       copy.muted = true;
       copy.loop = true;

@@ -27,8 +27,13 @@ export function initLightbox() {
     }
   };
 
+  /* .media-zoom é o próprio botão quando a mídia não tem controles; com a barra
+     do navegador (.has-controls) ele vira uma div e só o "ampliar" abre, senão
+     pausar ou arrastar o tempo abriria a visualização ampliada junto */
   for (const zoom of document.querySelectorAll('.media-zoom')) {
-    zoom.addEventListener('click', () => {
+    const trigger = zoom.tagName === 'BUTTON' ? zoom : zoom.querySelector('.media-zoom-hint');
+    if (!trigger) { continue; }
+    trigger.addEventListener('click', () => {
       const media = zoom.querySelector('.project-media');
       if (media) { open(media); }
     });

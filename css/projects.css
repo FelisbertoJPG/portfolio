@@ -135,6 +135,32 @@
   border: 1px solid var(--rule);
   padding: 2px 7px;
 }
+/* gravação de celular, em pé: com largura cheia ela passaria da altura da tela.
+   fica na altura de um aparelho, centrada, e o botão encolhe junto para o aviso
+   de "ampliar" continuar colado no vídeo. o data-portrait vai no próprio vídeo
+   porque o carrossel e o lightbox trocam a classe do clone e mantêm o atributo. */
+.media-zoom.is-portrait {
+  width: fit-content;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.project-media[data-portrait] {
+  width: auto;
+  max-width: 100%;
+  height: min(560px, 72vh);
+}
+/* vídeo com a barra do navegador (tempo, pausa, velocidade): o clique no vídeo
+   é da barra, então só o "ampliar" abre a visualização ampliada. ele sobe para
+   o canto de cima para não cobrir os botões da barra, que ficam embaixo. */
+.media-zoom.has-controls { cursor: default; }
+.has-controls .media-zoom-hint {
+  top: 10px;
+  bottom: auto;
+  font-family: var(--font-mono);
+  line-height: inherit;
+  cursor: zoom-in;
+}
 .media-zoom:hover .media-zoom-hint,
 .media-zoom:focus-visible .media-zoom-hint {
   color: var(--text);

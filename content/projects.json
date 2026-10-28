@@ -33,7 +33,7 @@
         "base": "Código fechado — sistema interno da autarquia. Publicado nas lojas Android e iOS."
       },
       "tags": ["Flutter", "Dart", "API REST", "PHP", "JSON"],
-      "media": null
+      "media": { "type": "video", "name": "ipasem-digital", "width": 412, "height": 836, "portrait": true }
     },
     {
       "id": "lubelion-online",

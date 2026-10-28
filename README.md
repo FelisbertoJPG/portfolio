@@ -58,6 +58,14 @@ do projeto em `content/projects.json`:
 "media": { "type": "video", "name": "berlim", "width": 1440, "height": 820 }
 ```
 
+Gravação de celular, em pé: acrescente `is-portrait` no `<button class="media-zoom">` e
+`data-portrait` no `<video>` (e `"portrait": true` no `media` do JSON). O card mostra o vídeo
+na altura de um aparelho, centrado, e o carrossel mostra ele inteiro em vez de cortar.
+Para mostrar a barra do navegador (tempo, pausa, velocidade), use `controls` no `<video>`
+e troque o `<button class="media-zoom">` por `<div class="media-zoom has-controls">`, com o
+"ampliar" virando um `<button class="media-zoom-hint">` dentro dela: aí só ele abre a
+ampliação, e o carrossel tira a barra do clone sozinho. O IPASEMNH Digital é o exemplo.
+
 O carrossel de prévias, no topo da página, não precisa de nada: ele clona a
 mídia do card do projeto, então o vídeo aparece lá assim que aparecer aqui.
 Enquanto não existe, o card do carrossel mostra o mesmo aviso de "em breve".
